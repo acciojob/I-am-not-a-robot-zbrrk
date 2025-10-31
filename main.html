@@ -1,18 +1,89 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>I'm not a robot</title>
-    <link rel="stylesheet" href="styles.css" />
-  </head>
-  <body>
-    <main>
-      <!-- solution start -->
-      
-      <!-- solution end -->
-    </main>
-    <script src="./script.js"></script>
-  </body>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>I'm not a Robot Verification</title>
+  <style>
+    body {
+      font-family: "Poppins", sans-serif;
+      background-color: #f5f7fa;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    h3 {
+      color: #333;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    .container {
+      display: grid;
+      grid-template-columns: repeat(3, 150px);
+      grid-gap: 15px;
+      justify-content: center;
+      margin-bottom: 20px;
+    }
+
+    .container img {
+      width: 150px;
+      height: 150px;
+      border: 2px solid transparent;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: 0.2s;
+      object-fit: cover;
+    }
+
+    .container img.selected {
+      border-color: #009688;
+      transform: scale(1.05);
+    }
+
+    #reset,
+    #verify {
+      background-color: #009688;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 1rem;
+      margin: 5px;
+      display: none;
+    }
+
+    #reset:hover,
+    #verify:hover {
+      background-color: #00796b;
+    }
+
+    #message {
+      margin-top: 15px;
+      font-weight: 500;
+      color: #333;
+    }
+  </style>
+</head>
+<body>
+  <h3 id="h">
+    Please click on the identical tiles to verify that you are not a robot.
+  </h3>
+
+  <div class="container" id="imageContainer"></div>
+
+  <div>
+    <button id="reset">Reset</button>
+    <button id="verify">Verify</button>
+  </div>
+
+  <p id="message"></p>
+
+  <script src="script.js"></script>
+</body>
 </html>
